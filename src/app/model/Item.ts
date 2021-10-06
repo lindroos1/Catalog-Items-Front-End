@@ -2,6 +2,11 @@
 
 export class Item{
 
-    public  name: string | undefined;
-    public id: string  | undefined;
+
+    public Item(name:string, id:string){
+        this.name = name;
+        this.id = id;
+    }
+    public  name: string = " ";
+    public id: string  = " ";
 }
