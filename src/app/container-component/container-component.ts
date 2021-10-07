@@ -10,6 +10,7 @@ export class ContainerComponent implements OnInit {
   constructor() { }
 
   @Input() public name:string = "";
+  @Input() public description:string ="";
 
   ngOnInit(): void {
   }
