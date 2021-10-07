@@ -11,6 +11,7 @@ export class ContainerComponent implements OnInit {
 
   @Input() public name:string = "";
   @Input() public description:string ="";
+  @Input() public projectIds: string[] = [];
 
   ngOnInit(): void {
   }
