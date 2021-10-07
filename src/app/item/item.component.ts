@@ -12,6 +12,7 @@ export class ItemComponent implements OnInit {
   public items: Item[] = []; 
 
   constructor(private itemService:ItemService) { }
+  
 
   ngOnInit() {
     this.itemService.get().subscribe(data =>{
@@ -19,4 +20,9 @@ export class ItemComponent implements OnInit {
       this.items = data;
      });
   }
+
+  public  getItems(): Item[]{
+    return this.items;
+  }
+
 }
