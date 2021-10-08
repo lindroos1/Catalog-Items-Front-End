@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container-component/container-component';
 import { ItemComponent } from './item/item.component';
+import { RequestFormComponent } from './request-form/request-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    ItemComponent
+    ItemComponent,
+    RequestFormComponent
   ],
   imports: [
     BrowserModule,

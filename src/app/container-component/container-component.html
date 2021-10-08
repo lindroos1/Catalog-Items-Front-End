@@ -18,6 +18,10 @@
         </div>
         <div class="card-footer">
           <div>{{projectIds}}</div>
+          <div>
+            <button class="btn btn-primary" (click)="clicked = !clicked">Request</button>
+            <div *ngIf="clicked"><app-request-form></app-request-form></div>
+          </div>
             <!--
             <app-card-footer (buttonClicked)="onButtonClicked($event)"></app-card-footer>
             -->

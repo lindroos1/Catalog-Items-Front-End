@@ -13,6 +13,8 @@ export class ContainerComponent implements OnInit {
   @Input() public description:string ="";
   @Input() public projectIds: string[] = [];
 
+  public clicked:boolean = false;
+
   ngOnInit(): void {
   }
 
