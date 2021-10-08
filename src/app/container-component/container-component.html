@@ -19,7 +19,7 @@
         <div class="card-footer">
           <div>{{projectIds}}</div>
           <div>
-            <button class="btn btn-primary" (click)="clicked = !clicked">Request</button>
+            <a class="button" routerLink="/request" routerLinkActive="activebutton">Request</a>
             <div *ngIf="clicked"><app-request-form></app-request-form></div>
           </div>
             <!--
