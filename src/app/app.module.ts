@@ -16,20 +16,14 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     ContainerComponent,
     ItemComponent,
-    RequestFormComponent, 
+    RequestFormComponent,
    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-     { path: '', redirectTo: '/main', pathMatch: 'full' },
-
-      {path: 'request', component: RequestFormComponent},
-     {path: 'main ', component: ItemComponent},
-      {path: 'main', component: ContainerComponent}
-     ]),
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

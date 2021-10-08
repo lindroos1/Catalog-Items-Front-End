@@ -14,6 +14,7 @@ export class ItemService {
   }
   
   public get():Observable<Item[]>{
+    console.log("ItemComponent onInit called");
       return this.htpp.get<Item[]>(this.url);
       }
 }
