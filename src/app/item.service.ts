@@ -10,6 +10,8 @@ export class ItemService {
   
   url: string = 'http://localhost:8080/getAllItems';
 
+  item:any;
+
   constructor(private htpp: HttpClient){
   }
   
@@ -17,4 +19,6 @@ export class ItemService {
     console.log("ItemComponent onInit called");
       return this.htpp.get<Item[]>(this.url);
       }
+
+
 }

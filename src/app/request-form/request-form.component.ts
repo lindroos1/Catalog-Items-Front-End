@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ItemService } from '../item.service';
 import { Item } from '../model/Item';
 
 @Component({
@@ -8,10 +10,16 @@ import { Item } from '../model/Item';
 })
 export class RequestFormComponent implements OnInit {
 
-  @Input() requestedItem: any = "value hasnt been passed yet";
-  constructor() { }
+  public requestedItem: string = "value hasnt been passed yet";
+  public constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+        this.requestedItem = params["id"];
+    });
+}
 
   ngOnInit(): void {
   }
+
+
 
 }

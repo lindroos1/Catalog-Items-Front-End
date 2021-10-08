@@ -9,5 +9,6 @@ import { ItemComponent } from './item/item.component';
 })
 export class AppComponent {
 
+ public requestID:string  = "string from app componenet";
   title = 'Catalog-Items-Front-End';
 }
