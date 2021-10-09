@@ -9,7 +9,7 @@
         </div>
         <div class="card-block">
           <div class="card-body">
-            <div> {{description}}</div>
+            <div> {{id}}</div>
               <!---
             <app-card-image *ngIf="showImage"></app-card-image>
             <app-card-list *ngIf="!showImage"></app-card-list>
@@ -19,7 +19,7 @@
         <div class="card-footer">
           <div>
             <!--routerLink="/request"-->
-              <a class="button" (click)="takeInpit(name)" routerLinkActive="activebutton"  >Request</a>
+              <a class="button" (click)="takeInpit(id)" routerLinkActive="activebutton"  >Request</a>
               
           </div>
             <!--
