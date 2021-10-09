@@ -1,5 +1,15 @@
 
 <div *ngFor="let required of item.required">
+    <form [formGroup] = "this.RequestForm">
+        <div>{{required}}</div>
+        <input type="text"  formControlName="{{required}}">
+    </form>    
+</div>
+<button (click) ="submited()">Submit</button>
+
+<!--
+<div *ngFor="let required of item.required">
     <div>{{required}}</div>
     <input inputype="text">
 </div>
+-->

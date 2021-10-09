@@ -9,6 +9,7 @@ import { ContainerComponent } from './container-component/container-component';
 import { ItemComponent } from './item/item.component';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-  
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,7 @@ export class SingleItemService {
 
   urlSingle:string = 'http://localhost:8080/getSpecificItem?itemId=';
   item:any;
+  postUrl:string = "";
   
   constructor(private htpp: HttpClient){
   }
@@ -31,4 +32,6 @@ export class SingleItemService {
       return this.item;
     
    }
+
+  
 }
