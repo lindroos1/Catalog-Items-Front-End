@@ -23,7 +23,8 @@ export class RequestFormComponent implements OnInit {
         this.requestedItem = params["id"];
         this.itemService.setIDs(this.requestedItem);
         this.itemService.getSingleItemRequest()
-        .subscribe(_ => this.item = this.itemService.getName());
+        .subscribe(_ => this.item = this.itemService.getName().schema);
+
     });
     
 }

@@ -1,4 +1,3 @@
-<div *ngIf="item">{{item.name}}</div>
 
-<div>{{item.id}}</div>
-<div>{{item.schema}}</div>
+
+<div *ngFor="let required of item.required">{{required}}</div>

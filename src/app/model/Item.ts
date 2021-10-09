@@ -1,3 +1,4 @@
+import { Schema } from "./Schema";
 
 
 export class Item{
@@ -6,5 +7,5 @@ export class Item{
     public id: string  = " ";
     public description: string = " ";
     public projectIds: string[] = [];
-    public schema:string[][] = [];
+    public schema:Schema | undefined;
 }
