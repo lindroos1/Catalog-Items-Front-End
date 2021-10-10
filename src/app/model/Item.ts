@@ -1,3 +1,4 @@
+import { Input } from "@angular/core";
 import { Schema } from "./Schema";
 
 
@@ -8,8 +9,8 @@ export class Item{
     public description: string = " ";
     public projectIds: string[] = [];
     public schema:Schema | undefined;
-    public input:any;
+    public input:Input | undefined;
 
-    public userDescription:string= " ";
-    public deploymentName:string = " "
+    //public deploymentName:string = " "
+    //public userDescription:string= " ";
 }
