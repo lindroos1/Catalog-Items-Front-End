@@ -17,6 +17,7 @@ export class ContainerComponent implements OnInit {
   @Input() public name:string = "";
   @Input() public id:string ="";
   @Input() public projectIds: string[] = [];
+  @Input() public descrition!: string;
  
   public constructor(private router: Router) { }
 
