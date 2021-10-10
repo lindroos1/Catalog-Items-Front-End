@@ -15,8 +15,12 @@ export class RequestFormComponent implements OnInit {
 
   public requestedItem: string = "value hasnt been passed yet";
   public item: any;
-
-  public RequestForm: FormGroup = this.formBuilder.group({});
+  customObj:any
+  
+  public RequestForm: FormGroup = this.formBuilder.group({
+    "description": '',
+    "deploymentName":''
+  });
   //this.RequestForm =
 
   //takes parameters from container
@@ -28,7 +32,7 @@ export class RequestFormComponent implements OnInit {
 
       this.itemService.getSingleItemRequest()
         .subscribe(_ => {
-          this.item = this.itemService.getName().schema,
+          this.item = this.itemService.getName(),
           this.createFormControls()
           console.log("this is requestForm object", this.RequestForm.value);
         }
@@ -38,13 +42,25 @@ export class RequestFormComponent implements OnInit {
   }
 
   createFormControls() {
-    for (let i of this.item.required) {
+    for (let i of this.item.schema.required) {
       this.RequestForm.addControl(i, new FormControl('', Validators.required));
     }
   }
 
+
   submited() {
-      console.log(this.RequestForm.getRawValue());
+      Object.keys(this.RequestForm.controls).forEach((key:string) =>{
+        console.log(key);
+        console.log(this.RequestForm.get(key)?.value)
+      })
+      this.item.input = this.RequestForm.getRawValue();
+      this.itemService.PostDeplyment(JSON.stringify(this.item))
+      .subscribe(data =>{data = this.item});
+      console.log("this is the the JSON file",this.item);
+      //spring will need:
+      //1. item Id.
+      // catalog item id, aka projectID
+      //
   }
 
   ngOnInit(): void {

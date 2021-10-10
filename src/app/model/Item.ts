@@ -8,4 +8,8 @@ export class Item{
     public description: string = " ";
     public projectIds: string[] = [];
     public schema:Schema | undefined;
+    public input:any;
+
+    public userDescription:string= " ";
+    public deploymentName:string = " "
 }

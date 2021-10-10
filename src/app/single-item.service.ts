@@ -11,7 +11,7 @@ export class SingleItemService {
 
   urlSingle:string = 'http://localhost:8080/getSpecificItem?itemId=';
   item:any;
-  postUrl:string = "";
+  postUrl:string = "http://localhost:8080/postItem";
   
   constructor(private htpp: HttpClient){
   }
@@ -33,5 +33,8 @@ export class SingleItemService {
     
    }
 
-  
+   public PostDeplyment(JsonObj:any):Observable<any>{ 
+      const headers = {'content-type': 'application/json', 'charset': 'utf-8'};
+      return this.htpp.post<any>(this.postUrl, JsonObj, {headers:headers});
+   }
 }

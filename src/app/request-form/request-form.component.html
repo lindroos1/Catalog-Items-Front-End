@@ -1,11 +1,23 @@
 
-<div *ngFor="let required of item.required">
+
+<div>
+    <p>{{item.name}}</p>
     <form [formGroup] = "this.RequestForm">
-        <div>{{required}}</div>
-        <input type="text"  formControlName="{{required}}">
-    </form>    
+        <div>Deployment Name</div>
+        <input type="text" formControlName="deploymentName">
+        <div>Description</div>
+        <input type="text" formControlName="description">
+        <div *ngFor="let required of item.schema.required">
+          
+                <div>{{required}}</div>
+                <input type="text"  formControlName="{{required}}">
+           
+        </div>
+        <button (click) ="submited()">Submit</button>
+        
+    </form>
 </div>
-<button (click) ="submited()">Submit</button>
+
 
 <!--
 <div *ngFor="let required of item.required">

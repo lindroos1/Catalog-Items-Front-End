@@ -2,5 +2,5 @@
 
 
 export class Schema{
-    required:string[] = [];
+    public required:string[] = [];
 }
