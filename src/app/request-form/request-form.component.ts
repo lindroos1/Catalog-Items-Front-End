@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ItemService } from '../item.service';
 import { Item } from '../model/Item';
 import { SingleItemService } from '../single-item.service';
@@ -16,7 +16,8 @@ export class RequestFormComponent implements OnInit {
   public requestedItem: string = "value hasnt been passed yet";
   public item: any;
   customObj:any
-  
+  m_status!:number;
+ 
   public RequestForm: FormGroup = this.formBuilder.group({
     "description": '',
     "deploymentName":''
@@ -25,7 +26,7 @@ export class RequestFormComponent implements OnInit {
 
   //takes parameters from container
   public constructor(private route: ActivatedRoute, private itemService: SingleItemService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder, private router: Router) {
     this.route.queryParams.subscribe(params => {
       this.requestedItem = params["id"];
       this.itemService.setIDs(this.requestedItem);
@@ -55,22 +56,27 @@ export class RequestFormComponent implements OnInit {
       })
       this.item.input = this.RequestForm.getRawValue();
       this.itemService.PostDeplyment(JSON.stringify(this.item))
-      .subscribe(data =>{data = this.item});
-      console.log("this is the the JSON file",this.item);
-      //spring will need:
-      //1. item Id.
-      // catalog item id, aka projectID
-      //
+      .subscribe(data =>{this.m_status = data.status; console.log(this.m_status)});
   }
 
   ngOnInit(): void {
+    
   }
 
-  /*
-  createForm(){
-    for(const required of this.item.required){
-        this.RequestForm.addControl(required, this.formBuilder.control(required));
+  passed():boolean{
+    if(this.m_status == 200){
+      alert("success");
+      this.m_status = 0;
+      return true;
     }
+    else if(this.m_status == 400 || this.m_status == 405){
+      alert("did not succeed");
+    }
+    return false;
   }
-  */
+
+
+  back() {
+    this.router.navigate(["main"]);
+  }
 }

@@ -34,7 +34,9 @@ export class SingleItemService {
    }
 
    public PostDeplyment(JsonObj:any):Observable<any>{ 
+     
       const headers = {'content-type': 'application/json', 'charset': 'utf-8'};
-      return this.htpp.post<any>(this.postUrl, JsonObj, {headers:headers});
+      const options = {  headers: headers,   observe: "response" as 'body'};
+      return this.htpp.post<any>(this.postUrl, JsonObj, options);
    }
 }
