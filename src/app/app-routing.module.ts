@@ -7,7 +7,8 @@ import { RequestFormComponent } from './request-form/request-form.component';
 
 
 const routes: Routes = [  { path: '', redirectTo: '/main', pathMatch: 'full' },
-{path: 'request', component: RequestFormComponent},
+{path: '82f17a7c-556f-3071-8f24-6eb177e56bfc', component: RequestFormComponent},
+{path: '646f2da7-d345-3106-96f1-74deb7223105', component: RequestFormComponent},
 {path: 'main', component: ItemComponent},
 {path:'deployments', component:DeploymentsComponent}
 ];

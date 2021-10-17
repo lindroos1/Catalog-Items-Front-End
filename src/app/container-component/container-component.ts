@@ -1,9 +1,6 @@
 import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { Items } from '@clr/angular/data/datagrid/providers/items';
-import { ItemService } from '../item.service';
 import { Item } from '../model/Item';
-import { RequestFormComponent } from '../request-form/request-form.component';
 
 
 @Component({
@@ -20,14 +17,17 @@ export class ContainerComponent implements OnInit {
  
   public constructor(private router: Router) { }
 
-  public takeInpit(Id:string): void{
+//will redirect us to the correspondig view associated with that item.id(aka card.id)
+  public RedirectToForm(Id:any): void{
 
+    //navigationExtras is used to share info between componenets when redirecting
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        "id":Id
+        ItemToSend: this.item
       }
   };
-  this.router.navigate(["request"], navigationExtras);
+  console.log("this is what we send from container", this.item?.name);
+  this.router.navigate([Id], navigationExtras);
   }
 
  
