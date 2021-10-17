@@ -1,0 +1,18 @@
+
+
+
+<h3 class="title"> Deployments</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let deployment of deployments">
+        <td>{{deployment.name}}</td>
+      <td>{{deployment.ownedBy}}</td>
+      </tr>
+  </tbody>
+</table>

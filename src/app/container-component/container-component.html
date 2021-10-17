@@ -1,22 +1,26 @@
-<div class="clr-row">
-    <div class="clr-col-3">
-      <div class="card">
-        <div class="card-header">
-          <div>{{name}}</div>
-        </div>
-        <div class="card-block">
-          <div class="card-body">
-            <div> {{descrition}}</div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div>
-            <!--routerLink="/request"-->
-              <cds-button (click)="takeInpit(id)" routerLinkActive="activebutton">Request</cds-button>
-              
-          </div>
-        </div>
+
+<div class="card">
+  <img src="http://localhost:8080/getImage?imageId={{item?.iconId}}" width="50" height="50">
+  <div class="card-header truncate" title=   "{{item?.name}}">
+    {{item?.name}}
+  </div>
+  <div class="card-block">
+    <div class="card-body">
+      <div class="clr-row">
+        <span class="clr-col-10 truncate" title="{{item?.type?.name}}"> {{item?.type?.name}}</span>
+      </div>
+      <div class="clr-row">
+        <span class="clr-col-12">{{item?.description}}</span>
+      </div>
+      <div class="clr-row" *ngFor="let project of item?.projects">
+        <label class="clr-col-10">Projects: {{project?.name}}</label>
+        <span class="clr-col-10"></span>
       </div>
     </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-sm" (click)="takeInpit(id)">Request</button>
+  </div>
 </div>
+
 

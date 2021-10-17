@@ -13,7 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import '@cds/core/button/register.js';
-
+import { DeploymentsComponent } from './deployments/deployments.component';
+import '@cds/core/divider/register.js';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import '@cds/core/button/register.js';
     ContainerComponent,
     ItemComponent,
     RequestFormComponent,
+    DeploymentsComponent,
    
   ],
   imports: [

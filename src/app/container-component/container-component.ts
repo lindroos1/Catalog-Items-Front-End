@@ -1,7 +1,10 @@
 import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { Items } from '@clr/angular/data/datagrid/providers/items';
 import { ItemService } from '../item.service';
+import { Item } from '../model/Item';
 import { RequestFormComponent } from '../request-form/request-form.component';
+
 
 @Component({
   selector: 'app-container-component',
@@ -12,12 +15,8 @@ export class ContainerComponent implements OnInit {
 
 
   
-  public test:string = "";
-
-  @Input() public name:string = "";
   @Input() public id:string ="";
-  @Input() public projectIds: string[] = [];
-  @Input() public descrition!: string;
+  @Input() public item?:Item;
  
   public constructor(private router: Router) { }
 

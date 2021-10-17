@@ -1,2 +1,19 @@
 
+<header class="header-6">
+  <div class="branding">
+    <a class="nav-link">
+      <clr-icon shape="vm-bug"></clr-icon>
+      <span class="title">Service Broker</span>
+      </a>
+  </div>
+
+  <div class="header-nav">
+    <a class="nav-link nav-text" [routerLink]="'/main'" routerLinkActive="active">Catalog Items</a>
+
+    <a class="nav-link nav-text" [routerLink]="'/deployments'" routerLinkActive="active">Deployments</a>
+  </div>
+</header>
+
+<div class="cards">
   <router-outlet></router-outlet>
+</div>
