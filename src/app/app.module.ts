@@ -11,7 +11,7 @@ import { RequestFormComponent } from './request-form/request-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from '@clr/angular';
 import '@cds/core/select/register.js';
-import '@cds/core/button/register.js';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeploymentsComponent } from './deployments/deployments.component';
 

@@ -2,13 +2,23 @@
 <div> 
   <img src="http://localhost:8080/getImage?imageId={{item?.iconId}}" width="50" height="50">
   <h3>{{item?.name}}</h3>
+  <form clrForm [formGroup]="formGroup">
+    <clr-select-container>
+      <label>Select version</label>
+      <select clrSelect name="options"  formControlName="Version">
+          <option value="version"  *ngFor="let version of item.versions">{{version.id}}</option>
+      </select>
+    </clr-select-container>
+  </form>
+
+
 </div>
 <form clrForm [clrLayout]="'horizontal'" [formGroup]="formGroup">
   <clr-input-container>
     <label>Project</label>
     <input clrInput name="Project" formControlName="Project"/>
-    <clr-control-helper>Enter your username</clr-control-helper>
-    <clr-control-error>The username is required</clr-control-error>
+    <clr-control-helper>Choose project</clr-control-helper>
+    <clr-control-error>Project is required</clr-control-error>
   </clr-input-container>
   <clr-input-container>
     <label>Deployment Name</label>
@@ -18,13 +28,3 @@
 
   <button class="btn btn-primary" (click)="submited()">Submit</button>
 </form>
-
-<cds-select control-width="shrink">
-  <label>textarea</label>
-  <select>
-      <option>Option One</option>
-      <option>Option Two</option>
-      <option>Option Three</option>
-  </select>
-  <cds-control-message>message text</cds-control-message>
-</cds-select> 
