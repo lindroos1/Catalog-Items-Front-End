@@ -6,7 +6,7 @@
     <clr-select-container>
       <label>Select version</label>
       <select clrSelect name="options"  formControlName="Version">
-          <option value="version"  *ngFor="let version of item.versions">{{version.id}}</option>
+          <option *ngFor="let version of item.versions" [value]="version.id"  >{{version.id}}</option>
       </select>
     </clr-select-container>
   </form>
@@ -14,17 +14,19 @@
 
 </div>
 <form clrForm [clrLayout]="'horizontal'" [formGroup]="formGroup">
-  <clr-input-container>
-    <label>Project</label>
-    <input clrInput name="Project" formControlName="Project"/>
-    <clr-control-helper>Choose project</clr-control-helper>
-    <clr-control-error>Project is required</clr-control-error>
-  </clr-input-container>
+  <form clrForm [formGroup]="formGroup">
+    <clr-select-container>
+      <label>Select Project</label>
+      <select clrSelect name="options"  formControlName="ProjectName">
+          <option  *ngFor="let project of item.projects" [value]="project.id" >{{project.name}}</option>
+      </select>
+    </clr-select-container>
+  </form>
   <clr-input-container>
     <label>Deployment Name</label>
     <input clrInput name="DeploymentName" type="text" formControlName="DeploymentName"/>
     <clr-control-error>Deployment Name is required</clr-control-error>
   </clr-input-container>
 
-  <button class="btn btn-primary" (click)="submited()">Submit</button>
+  <button class="btn btn-primary" (click)="submit()">Submit</button>
 </form>
