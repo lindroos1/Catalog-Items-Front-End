@@ -1,0 +1,12 @@
+<clr-alerts>
+    <clr-alert *ngFor="let alert of alerts | async"
+               [clrAlertClosable]="true"
+               [clrAlertType]="alert.type">
+      <clr-alert-item>
+        <span class="alert-text">
+           {{ alert.type }}
+        </span>
+      </clr-alert-item>
+    </clr-alert>
+  </clr-alerts>
+  

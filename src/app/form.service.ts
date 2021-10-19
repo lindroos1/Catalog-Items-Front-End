@@ -12,8 +12,8 @@ export class FormService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public submitForm(Project: string, DeploymentName: string, Version: string, id:string): Observable<AjaxResponse> {
-    return this.httpClient.post<AjaxResponse>(this.url, {
+  public submitForm(Project: string, DeploymentName: string, Version: string, id:string): Observable<any> {
+    return this.httpClient.post<any>(this.url, {
       //left side has to match 1:1 the spring defined model
       projectId: Project,
       deploymentName: DeploymentName,

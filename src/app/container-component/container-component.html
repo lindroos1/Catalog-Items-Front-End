@@ -1,21 +1,26 @@
 
 <div class="card">
-  <img src="http://localhost:8080/getImage?imageId={{item?.iconId}}" width="50" height="50">
-  <div class="card-header truncate" title=   "{{item?.name}}">
-    {{item?.name}}
-  </div>
+  <div class="card-media-block">
+    <img src="http://localhost:8080/getImage?imageId={{item?.iconId}}" class="card-media-image" >
+    <div class="card-media-description">
+      <span class="card-media-title">
+        <div class="card-header truncate" title=   "{{item?.name}}">
+          {{item?.name}}
+        </div>
+        <span class="card-media-text">
+          {{item?.type?.name}}
+        </span>
+      </span>
+    </div>
+    </div>
   <div class="card-block">
     <div class="card-body">
       <div class="clr-row">
-        <span class="clr-col-10 truncate" title="{{item?.type?.name}}"> {{item?.type?.name}}</span>
+        <span class="clr-col-20">{{item?.description}}</span>
       </div>
-      <div class="clr-row">
-        <span class="clr-col-12">{{item?.description}}</span>
-      </div>
-      <div class="clr-row" *ngFor="let project of item?.projects">
-        <label class="clr-col-10">Projects: {{project?.name}}</label>
-        <span class="clr-col-10"></span>
-      </div>  
+      <label>Projects:
+        <label class="clr-col-20" *ngFor="let project of item?.projects"> {{project?.name}} </label>
+      </label>
     </div>
   </div>
   <div class="card-footer">
