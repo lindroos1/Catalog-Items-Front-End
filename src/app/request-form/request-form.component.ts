@@ -5,6 +5,7 @@ import { AjaxResponse } from 'rxjs/ajax';
 import { AlertService } from '../alert.service';
 import { FormService } from '../form.service';
 import { AlertType } from '../model/Alert';
+import { StatusService } from '../status.service';
 
 
 
@@ -18,10 +19,11 @@ export class RequestFormComponent implements OnInit {
   public item: any;
  
   public formGroup!: FormGroup;
+
   
   constructor(private formBuilder: FormBuilder,
     private router: Router, private formService:FormService, 
-    private alertService:AlertService) { 
+    private alertService:AlertService, private statusService: StatusService) { 
        this.item = router.getCurrentNavigation()?.extras.queryParams?.ItemToSend;
     }
 
@@ -43,6 +45,5 @@ export class RequestFormComponent implements OnInit {
       }));
     
   }
-
   
 }

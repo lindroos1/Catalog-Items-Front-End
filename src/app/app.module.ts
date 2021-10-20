@@ -15,6 +15,7 @@ import '@cds/core/select/register.js';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeploymentsComponent } from './deployments/deployments.component';
 import { AlertComponent } from './alert/alert.component';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AlertComponent } from './alert/alert.component';
     RequestFormComponent,
     DeploymentsComponent,
     AlertComponent,
+    StatusComponent,
    
   ],
   imports: [

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { AjaxResponse } from 'rxjs/ajax';
 import { Alert, AlertType } from './model/Alert';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class AlertService {
   public get alerts(): Alert[] {
     return this.alertsInternal.getValue();
   }
-
+  
   public set alerts(alerts: Alert[]) {
     this.alertsInternal.next(alerts);
   }
